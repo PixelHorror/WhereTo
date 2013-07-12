@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>WhereTo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+	<style>
+		#map { height: 400px; }
+	 </style>
+</head>
+	<body>
+		<article id="main-view">
+			<header>
+				<h1>WhereTo</h1>
+			</header>
+			<section id="map">
+				
+			</section>
+			<section id="list">
+				
+			</section>
+			<section id="controls">
+				<div class="spinner">
+					<div id="spin"></div>
+				</div>
+
+				<a href="#" id="popular">Popular</a>
+				<a href="#" id="trending">Trending</a>
+				<a href="#" id="clear">Clear</a>
+			</section>
+		</article>
+		<script id="list-template" type="text/x-handlebars-template">
+		<h1>{{ headerFullLocation }}</h1>
+		<p>Tengo <span>{{ totalResults }} resultados</span></p>
+		{{#each groups }}
+			{{#each this.items}}
+				<a href="{{venue.canonicalUrl}}">{{venue.name}} en la {{venue.location.address}}</a>
+			<br>
+			{{/each}}
+		{{/each}}
+		</script>
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+		<script type="text/javascript" src="content/js/libs/handlebars.js"></script>
+		<script type="text/javascript" src="content/js/libs/zepto.min.js"></script>
+		<script type="text/javascript" src="content/js/libs/spin.min.js"></script>
+		<script type="text/javascript" src="content/js/main.js"></script>
+	</body>
+</html>
