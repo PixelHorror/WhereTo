@@ -1,7 +1,7 @@
 # General Frontend settings
 
 http_images_path = "/content/imgs"
-http_fonts_path	= "fonts"
+http_fonts_path	= "/content/fonts"
 http_path = "/static"
 css_dir = "styles/css"
 sass_dir = "styles/sass"

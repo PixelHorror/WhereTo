@@ -1,0 +1,140 @@
+//Main SASS File for WhereTo
+//@PixelHorror
+
+@import "compass/reset"
+@import "compass/css3"
+@import "compass/utilities/general/clearfix"
+
+@import "font-awesome"
+@import "fonts"
+
+//Mixins
+
+@mixin BUTTON($BG, $SHADOW, $WIDTH)
+	@include box-shadow(0.16em 0.15em 0px 1px $SHADOW)
+	@include text-shadow(1px 1px 1px lighten( black, 25%))
+	@include border-radius(3px)
+	@include LATO_BOLD
+	position: relative
+	text-transform: uppercase
+	border: none
+	color: white
+	background: $BG 
+	width: $WIDTH
+	height: 34px
+	cursor: pointer
+	font-size: 16px
+	line-height: 100%
+	zoom: 1
+	left: 0
+
+.avatar
+	@include border-radius(75px)
+	width: 150px
+	height: 150px	
+	background: url(http://i.imgur.com/RpmtjEi.png) no-repeat
+
+html, body
+	min-height: 100%
+
+a, p
+	@include LATO
+	text-decoration: none
+
+h1
+	@include ACME
+	font-size: 80px
+	padding: 20px 10px 15px
+	color: white
+
+#main-view
+	background: #08304A
+	min-height: 100%
+	padding-bottom: 30px
+
+	#map
+		#map-container
+			width: 100%
+			height: 450px
+
+	#list, #controls
+		text-align: center
+	
+	#controls		
+		padding: 30px 0px
+		min-width: 400px
+
+		h2
+			@include LATO_BOLD
+			font-size: 38px
+			margin-bottom: 35px
+			color: white
+
+
+		a
+			margin-right: 15px
+		
+		#popular
+			button
+				@include BUTTON(#e74c3c, #c0392b, 200px)
+
+		#trending
+			button
+				@include BUTTON(#1abc9c, #16a085, 200px)
+
+		#clear
+			button
+				@include BUTTON(#3498db,#2980b9, 200px)	
+
+	#list
+		@include box-shadow(0.16em 0.15em 0px 1px #7f8c8d)
+		@include border-radius(3px)
+		min-height: 200px
+		margin: 0px auto 40px
+		padding: 10px 20px
+		background: white
+		width: 40%
+
+		p
+			margin: 20px 0px 10px
+
+		
+		h2
+			@include LATO_BOLD
+			font-size: 23px
+			padding: 15px 0px 8px
+			color: black
+
+		ul
+			li
+				border-bottom: 1px solid #34495e
+				padding-bottom: 15px
+				margin-bottom: 3px
+				text-align: left
+				font-size: 18px
+
+				a
+					color: #7f8c8d
+
+				p
+					cursor: pointer
+
+					.name, .address
+						display: block
+
+					.name
+						@include LATO_BOLD
+
+	footer
+		position: relative
+		width: 100%
+
+		.avatar
+			position: absolute
+			right: 10px
+			bottom: 15px
+
+
+
+
+
