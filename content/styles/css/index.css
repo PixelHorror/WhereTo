@@ -2008,28 +2008,32 @@ h1 {
   padding: 20px 10px 15px;
   color: white;
 }
-
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000350}}
+h1 .icon-rocket {
+  color: #c0392b;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000353}}
 #main-view {
   background: #08304a;
   min-height: 100%;
   padding-bottom: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000359}}
 #main-view #map #map-container {
   width: 100%;
   height: 450px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000363}}
 #main-view #list, #main-view #controls {
   text-align: center;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000366}}
 #main-view #controls {
   padding: 30px 0px;
   min-width: 400px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000370}}
 #main-view #controls h2 {
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -2037,11 +2041,11 @@ h1 {
   margin-bottom: 35px;
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000377}}
 #main-view #controls a {
   margin-right: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000381}}
 #main-view #controls #popular button {
   -webkit-box-shadow: 0.16em 0.15em 0px 1px #c0392b;
   -moz-box-shadow: 0.16em 0.15em 0px 1px #c0392b;
@@ -2067,7 +2071,7 @@ h1 {
   zoom: 1;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000385}}
 #main-view #controls #trending button {
   -webkit-box-shadow: 0.16em 0.15em 0px 1px #16a085;
   -moz-box-shadow: 0.16em 0.15em 0px 1px #16a085;
@@ -2093,7 +2097,7 @@ h1 {
   zoom: 1;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000389}}
 #main-view #controls #clear button {
   -webkit-box-shadow: 0.16em 0.15em 0px 1px #2980b9;
   -moz-box-shadow: 0.16em 0.15em 0px 1px #2980b9;
@@ -2119,7 +2123,7 @@ h1 {
   zoom: 1;
   left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000392}}
 #main-view #list {
   -webkit-box-shadow: 0.16em 0.15em 0px 1px #7f8c8d;
   -moz-box-shadow: 0.16em 0.15em 0px 1px #7f8c8d;
@@ -2135,11 +2139,11 @@ h1 {
   background: white;
   width: 40%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\0000398}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003101}}
 #main-view #list p {
   margin: 20px 0px 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003105}}
 #main-view #list h2 {
   font-family: "Lato", sans-serif;
   font-weight: 700;
@@ -2147,7 +2151,7 @@ h1 {
   padding: 15px 0px 8px;
   color: black;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003112}}
 #main-view #list ul li {
   border-bottom: 1px solid #34495e;
   padding-bottom: 15px;
@@ -2155,29 +2159,29 @@ h1 {
   text-align: left;
   font-size: 18px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003116}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003119}}
 #main-view #list ul li a {
   color: #7f8c8d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003119}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003122}}
 #main-view #list ul li p {
   cursor: pointer;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003125}}
 #main-view #list ul li p .name, #main-view #list ul li p .address {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003128}}
 #main-view #list ul li p .name {
   font-family: "Lato", sans-serif;
   font-weight: 700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003131}}
 #main-view footer {
   position: relative;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003132}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/pixelhorror\/Dev\/WhereTo\/content\/styles\/sass\/index\.sass}line{font-family:\00003135}}
 #main-view footer .avatar {
   position: absolute;
   right: 10px;

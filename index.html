@@ -78,7 +78,7 @@
 					{{#each venues}}
 					<li>
 						<p class="venue-link" data-lat="{{this.location.lat}}" data-lon="{{this.location.lng}}">
-							<span class="name">{{venue.name}}</span>
+							<span class="name">{{this.name}}</span>
 							{{#if this.location.address}}
 								<span class="address">úbicada en la {{this.location.address}}</span>
 							{{/if}}

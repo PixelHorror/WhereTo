@@ -1,3 +1,9 @@
+/*
+whereto v.1.0
+
+A simple webpage that uses FourSquare to get popular and trending places near you.
+
+ */
 var WhereToApp = function() {
 	var self = this;
 
@@ -8,15 +14,15 @@ var WhereToApp = function() {
 		lon: -74.0806762
 	};
 
+	//NY coordinates because we're fancy
 	self.NYCoords = {
 		name: 'New York',
 		lat: 40.757046,
 		lon: -73.9859724
 	};
 
+	//General use variables
 	self.currentCoords = {};
-
-
 	self.map;
 	self.spot;
 	self.markers		=	[];
@@ -26,6 +32,7 @@ var WhereToApp = function() {
 	self.apiVersion		=	'20130710';
 	self.spinnerTarget	=	$('#spin')[0];
 
+	//Spinner config
 	self.opts			=	{
 		lines: 13, // The number of lines to draw
 		length: 20, // The length of each line
@@ -45,7 +52,7 @@ var WhereToApp = function() {
 		left: 'auto' // Left position relative to parent in px
 	};
 
-
+	//Constructor
 	self.build = function() {
 		self.spinner = new Spinner( self.opts );
 
@@ -62,6 +69,7 @@ var WhereToApp = function() {
 
 		self.spinner.spin( self.spinnerTarget );
 
+		//We try to get the current position without detecting features, if it fails, we'll use NY coordinates.
 		navigator.geolocation.getCurrentPosition( function( position ) {
  			self.currentCoords['lat'] = position.coords.latitude;
  			self.currentCoords['lon'] = position.coords.longitude;
@@ -73,21 +81,24 @@ var WhereToApp = function() {
 				self.buildMap();
 			}  
 		);		
-	
+		
+
      	self.spinner.stop();     			
 	}
 
+	//We build the map.
 	self.buildMap = function() {
 		self.map = L.map('map-container').setView([ self.currentCoords['lat'], self.currentCoords['lon'] ], 18);
 		L.tileLayer('http://{s}.tile.cloudmade.com/d7b35edc34c14fd19114e2212c4b5235/999/256/{z}/{x}/{y}.png', {
 	   		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery Â© <a href="http://cloudmade.com">CloudMade</a>'
 		}).addTo( self.map );
 
+		//The pointer that represents us.
 		L.marker([ self.currentCoords['lat'], self.currentCoords['lon'] ]).addTo( self.map )
 		    .bindPopup('Here we are :)')
 		    .openPopup();
 
-		//
+		//A simple circle to help the user find himself.
 		self.spot = L.circle( [ 0,0 ], 10, {
 		    color: 'red',
 		    fillColor: '#f03',
@@ -95,6 +106,7 @@ var WhereToApp = function() {
 		}).addTo( self.map );
 	}
 
+	//Simple function to move the freaking map
 	self.panMap = function( ele ){
 		var lat, lon;
 
@@ -106,6 +118,7 @@ var WhereToApp = function() {
 
 	}
 
+	//General getters
 	self.getDefaultCoords = function () {
 		return this.defaultCoords;
 	}
@@ -129,6 +142,7 @@ var WhereToApp = function() {
 		return self.currentCoords;
 	}
 
+	//We'll use this one to get popular places, and trending too.
 	self.getTrending = function() {
 		self.request( self.buildURL( 'trending' ) );
 
@@ -141,6 +155,7 @@ var WhereToApp = function() {
 		return false;
 	}
 
+	//This one updates the market if the user changes the query criteria
 	self.updateMarkers = function( data ) {
 
 		
@@ -158,7 +173,7 @@ var WhereToApp = function() {
 		})
 	}
 
-
+	//We have to use a diferent function for trending because the JSON that Foursquare uses, changes in this case.
 	self.updateMarkersForTrending = function( data ) {
 
 		
@@ -176,6 +191,7 @@ var WhereToApp = function() {
 		})
 	}
 
+	//We clean the board
 	self.clearMarkers = function(){
 		self.markers.forEach( function( ele, i ) {
 			self.map.removeLayer( self.markers[i] );
@@ -186,6 +202,8 @@ var WhereToApp = function() {
 		return false;
 	}
 
+
+	//We use mustache for templating, this function gets the data from the request.
 	self.print = function( data ) {
 		var source,
 			template,
@@ -198,10 +216,13 @@ var WhereToApp = function() {
 		$('#list').html( html );
 	}
 
+	//We hardcode an URL that consumes our API keys.
 	self.buildURL = function( type ) {
 		return 'https://api.foursquare.com/v2/venues/'+ type +'?ll='+ self.currentCoords['lat'] +','+ self.currentCoords['lon'] +'&client_id='+ self.clientID +'&client_secret='+ self.clientSecret +'&radius='+ self.radius +'&v=20130710&limit=5';
 	}
 
+
+	//A simple Ajax request.
 	self.request = function( url ) {
 		self.spinner.spin( self.spinnerTarget );
 
@@ -209,7 +230,6 @@ var WhereToApp = function() {
 			type: 'GET',
 			url: url,
 			success: function( obj ){
-				console.log( obj );
 				self.print(obj.response);
 				//This means we are looking for Trending places
 				if ( 'venues' in obj.response ) {
@@ -221,7 +241,6 @@ var WhereToApp = function() {
      			self.spinner.stop();     									
 			},
 			error: function( obj ){
-				console.log( obj );
      			self.spinner.stop();     									
 			}
 
@@ -230,6 +249,7 @@ var WhereToApp = function() {
 
 }
 
+//We instatiante the app, and let it construct itself.
 var app = new WhereToApp();
 
 app.build();
