@@ -1,3 +1,4 @@
 .sass-cache
 *.log
 node_modules
+./styles

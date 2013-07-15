@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>whereto?</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700|Acme' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/index.css" />
+
+</head>
+	<body>
+		<article id="main-view">
+			<header>
+				<h1>whereto? <i class="icon-rocket"></i></h1>
+			</header>
+			<section id="map">
+				<div class="spinner">
+					<div id="spin"></div>
+				</div>
+
+				<div id="map-container"></div>
+			</section>
+
+			<section id="controls">
+				<h2>Selecciona una opcion:</h2>				
+
+				<a href="#" id="popular">
+					<button>POPULAR <i class="icon-heart"></i></button>
+				</a>
+				<a href="#" id="trending">
+					<button>TRENDING <i class="icon-group"></i></button>
+				</a>
+				<a href="#" id="clear">
+					<button>CLEAR <i class="icon-eraser"></i></button>					
+				</a>
+			</section>
+
+			<section id="list">
+				<p>Selecciona una accion!</p>
+			</section>
+
+			<footer>				
+				<a title="Por @PixelHorror" href="http://www.github.com/pixelhorror">
+					<div class="avatar"></div>
+				</a>
+			</footer>
+			
+		</article>
+		<script id="list-template" type="text/x-handlebars-template">
+			<h2>Tal vez quieras visitar:</h2>	
+
+			{{#if groups}}			
+				<p>¡Haz click/tap para ubicarte!<p>
+			{{/if}}
+
+			{{#if venues}}			
+				<p>¡Haz click/tap para ubicarte!<p>
+			{{/if}}
+			<ul>
+				{{#each groups}}
+					{{#each this.items}}
+					<li>
+						<p class="venue-link" data-lat="{{venue.location.lat}}" data-lon="{{venue.location.lng}}">
+							<span class="name">{{venue.name}}</span>
+							{{#if venue.location.address}}
+								<span class="address">úbicada en la {{venue.location.address}}</span>
+							{{/if}}
+						</p>
+						<a target="_blank" href="{{venue.canonicalUrl}}"><i class="icon-link"></i>Visita el venue en Foursquare</a>						 
+					</li>
+					{{else}}
+						<p>No encontré ningún lugar de moda cerca a tu ubicación <i class="icon-frown"></i></p>
+					{{/each}}
+				{{else}}
+					{{#each venues}}
+					<li>
+						<p class="venue-link" data-lat="{{this.location.lat}}" data-lon="{{this.location.lng}}">
+							<span class="name">{{this.name}}</span>
+							{{#if this.location.address}}
+								<span class="address">úbicada en la {{this.location.address}}</span>
+							{{/if}}
+						</p>
+						<a target="_blank" href="{{this.canonicalUrl}}"><i class="icon-link"></i>Visita el venue en Foursquare</a>						 
+					</li>
+					{{else}}
+						<p>No encontré ningún lugar de moda cerca a tu ubicación <i class="icon-frown"></i><p>
+					{{/each}}
+				{{/each}}
+			<ul>
+
+		
+		</script>
+
+		<script src="http://cdn.leafletjs.com/leaflet-0.6.2/leaflet.js"></script>
+		<script type="text/javascript" src="js/app.min.js"></script>
+	</body>
+</html>
